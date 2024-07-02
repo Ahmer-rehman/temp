@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Laaleh</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@sanity/client@2.22.3/dist/sanityClient.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@sanity/client@2.23.0/browser/sanityClient.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css" />
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  </head>
+
+<body>
+  <script src="../script.js" type="module"></script>
+  <header class="header">
+    <!-- Ribbon for displaying promotional messages -->
+    <div class="top-ribbon">
+      <span id="notification_bar">Free Shipping on all orders within Pakistan</span>
+    </div>
+    <!-- Bar for displaying contact information, currency selection, and search functionality -->
+    <div class="bar">
+      <!-- Contact information -->
+      <span class="padding">For any queries whatsapp at ph#</span>
+      <a href="" class="whatsapp-link" id="whatsapp">0092xxxxxxxxxxxxxxxxx</a>
+
+      <!-- Currency selection dropdown -->
+      <select id="currency" name="currency">
+        <option value="PKR">PKR</option>
+        <option value="USD">USD</option>
+        <option value="EUR">EUR</option>
+      </select>
+
+      <!-- Search functionality -->
+      <div class="InputContainer">
+        <!-- Search input field -->
+        <input type="text" name="text" class="input" id="input" placeholder="Search" />
+
+        <!-- Search icon -->
+        <label for="input" class="labelforsearch">
+          <svg viewBox="0 0 512 512" class="searchIcon">
+            <path
+              d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z">
+            </path>
+          </svg>
+        </label>
+
+        <!-- Search input border -->
+        <div class="border"></div>
+      </div>
+    </div>
+
+    <!-- Bar 2 for displaying the website logo and shopping cart -->
+    <div class="bar-2">
+      <!-- Website logo -->
+      <div class="logo">
+        <a style="text-decoration: none" href="../index.html">
+          <span class="heading">Laaleh</span></a>
+        <!-- <img src="./assets/images/logo.png" alt=""> -->
+      </div>
+
+      <!-- Shopping cart -->
+
+      <!-- Cart Section -->
+      <div class="cart">
+        <div class="cart-logo">
+          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"
+            xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 30 30">
+            <g>
+              <g>
+                <path
+                  d="M20,6V5c0-2.761-2.239-5-5-5s-5,2.239-5,5v1H4v24h22V6H20z M12,5c0-1.657,1.343-3,3-3s3,1.343,3,3v1h-6V5z M24,28H6V8h4v3 h2V8h6v3h2V8h4V28z" />
+              </g>
+            </g>
+          </svg>
+        </div>
+        <div class="cart-text">Shopping Cart</div>
+        <div class="cart-count">0</div>
+        <div class="cart-overlay">
+          <div class="cart-data">
+            <div>shopping cart</div>
+            <p>Your cart is empty.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bar 3 for additional navigation or content -->
+    <div id="bar-3" class="bar-3">
+      <div class="navlinks">
+        <a href="#">FESTIVE</a>
+        <a href="#">DUPATTA</a>
+        <a href="#">NEW ARRIVALS</a>
+        <a href="#">CASUALS</a>
+        <a href="#">Shop</a>
+        <a href="#">Summer Sale</a>
+      </div>
+    </div>
+  </header>
+  <div class="main-container">
+    <div class="left">
+      <div class="Side-Nav-container">
+        <div class="Titles">catagories</div>
+        <ul class="catagoriesname-list">
+          <ui class="catagories-name">Black Collection</ui>
+          <ui class="catagories-name">Bridal</ui>
+          <ui class="catagories-name">Casual & Lawn </ui>
+          <ui class="catagories-name">Dupatta</ui>
+          <ui class="catagories-name">Festive</ui>
+          <ui class="catagories-name">New Arrivals</ui>
+          <ui class="catagories-name">Summer Sale</ui>
+        </ul>
+      </div>
+      <div class="Side-Nav-container">
+        <div class="Titles">Availability</div>
+        <ul class="catagoriesname-list">
+          <li class="check-box"><input type="checkbox" class="catagories-name" value="In Stock"> In Stock</li>
+          <li class="check-box"><input type="checkbox" class="catagories-name" value="Out Of Stock"> Out Of Stock</li>
+          <li class="check-box"><input type="checkbox" class="catagories-name" value="Coming Soon"> Coming Soon</li>
+        </ul>
+        <div style="font-size: 0.75em;" class="Side-Nav-container">
+          <div class="Titles">
+            Price Range
+          </div>
+
+          <div class="price-input-container">
+            <div class="price-input">
+              <div class="price-field">
+                <span>Min</span>
+                <input type="number" class="min-input" value="2500">
+              </div>
+              <div class="price-field">
+                <span>Max</span>
+                <input type="number" class="max-input" value="8500">
+              </div>
+            </div>
+            <div class="slider-container">
+              <div class="price-slider">
+              </div>
+            </div>
+          </div>
+
+          <!-- Slider -->
+          <div class="range-input">
+            <input type="range" class="min-range" min="0" max="10000" value="2500" step="1">
+            <input type="range" class="max-range" min="0" max="10000" value="8500" step="1">
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="right">
+      <div class="new-arrivals">
+        <div class="flex-style-container"></div>
+        <div class="new-arrivals-container"></div>
+        <template id="new-arrivals-item-template">
+          <div class="new-arrivals-item-container">
+            <div class="new-arrivals-img-div">
+              <img class="new-arrivals-img" src="" alt="" />
+              <span class="ribbon" style="display: none">NEW</span>
+              <button name="cart" id="add-to-cart-btn" class="hide-button cart-btn">
+                Add To Cart
+              </button>
+              <div class="size-btn-container">
+                <button name="small" class="hide-button s-btn small">
+                  small
+                </button>
+                <button name="medium" class="hide-button s-btn medium">
+                  medium
+                </button>
+                <button name="large" class="hide-button s-btn large">
+                  large
+                </button>
+              </div>
+              <button name="qv" class="hide-button quick-view qv">
+                Quick View
+              </button>
+            </div>
+            <div class="new-arrival-text-container">
+              <div class="laaleh-shop-text">LaaLeh Shop</div>
+              <div class="laaleh-shop-name"></div>
+              <div class="new-arrivals-price">
+                <span class="price"></span><span class="price"></span>
+              </div>
+            </div>
+          </div>
+        </template>
+        <!-- overlay screen -->
+        <div id="overlay" class="overlay">
+          <div class="overlay-content">
+            <span class="close-btn">&times;</span>
+            <div class="container_overlay">
+              <div class="overlayleft">
+                <img id="overlay-main-image" src="" alt="Main Image">
+                <div id="overlay-thumbnails"></div>
+              </div>
+              <div class="overlayright">
+                <div id="overlay-title" class="overlay_title"></div>
+                <div class="pad-overlay">
+                  <div class="overlay-product-list">
+                    <label for="Brand">Brand</label>
+                    <span>Laaleh shop</span>
+                  </div>
+                  <div class="overlay-product-list">
+                    <label for="Product Code">Product Code</label>
+                    <span>nf-5454</span>
+                  </div>
+                  <div class="overlay-product-list">
+                    <label for="Availability">Availability</label>
+                    <span>In Stock</span>
+                  </div>
+                </div>
+
+                <div class="overlay-price" id="overlay-price"></div>
+                <div class="overlayright-description" id="overlay-description"></div>
+                <div class="overlay-sizes" id="overlay-sizes"></div>
+                <div class="overlay-colors" id="overlay-colors"></div>
+                <div class="quantity-box">
+                  <button id="quantity-decrease" class="quantity-button">-</button>
+                  <input type="number" id="overlay-quantity" class="quantity-input" value="1" min="1">
+                  <button id="quantity-increase" class="quantity-button">+</button>
+                </div>
+                <a id="overlay-link" href="#">View More</a>
+                <a id="size-guide-link" href="../assets/image/sizeguide.png" target="_blank">Size Guide</a>
+                <button id="add-to-cart-btn" class="overlay-cart-btn">Add To Cart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer-container">
+    <div class="container">
+      <div class="Titles">Shop</div>
+      <ul class="catagoriesname-list">
+        <li>New Arrivals</li>
+        <li>Dupatta</li>
+        <li>Bridal</li>
+        <li>Festive</li>
+        <li>Refund Policy</li>
+        <li>Privacy Policy</li>
+        <li>Store Location</li>
+      </ul>
+    </div>
+    <div class="container">
+      <div class="Titles">Information</div>
+      <ul class="catagoriesname-list">
+        <li>About us</li>
+        <li>Contact us</li>
+        <li>Store Location</li>
+        <li>Faqs</li>
+      </ul>
+    </div>
+    <div class="container">
+      <div class="Titles">Stay Connected</div>
+      <div class="icon-container">
+        <a href="#" class="fa fa-facebook" id="facebook-link"></a>
+        <a href="#" class="fa fa-pinterest" id="pinterest-link"></a>
+        <a href="#" class="fa fa-youtube" id="youtube-link"></a>
+        <a href="#" class="fa fa-instagram" id="instagram-link"></a>
+      </div>
+    </div>
+    <div class="Copyright">@Copyright LAALEH</div>
+  </footer>
+</body>
+</html>

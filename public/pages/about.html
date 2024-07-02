@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./app.js"></script>
+<style>
+    
+.about-container {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.about-text {
+    background-image: url('https://nakoosh.com/cdn/shop/files/aboutmain_822b0d3c-e109-4733-aced-7a42f78482d9_2000x2000.jpg?v=1645532255');
+    background-size: cover; /* Ensure the background image covers the container */
+    
+    background-repeat: no-repeat; /* Prevent the background image from repeating */
+    height: 125vh;
+    width: 100%;
+    color: white ;
+}
+.text-container{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 6%;
+    left: 10%;
+    gap: 100px;
+    font-family: Poppins, sans-serif;
+}
+.about-title{
+    font-size: 1.5em;
+    font-weight: 600;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+
+}
+.about-heading {
+    font-size: 40px;
+    text-transform: uppercase;
+    position: relative;
+    letter-spacing: 0.02em;
+    line-height: 1.6em;
+    font-weight: 600;
+}
+.about-heading::after {
+    content: "";
+    position: absolute;
+    bottom: -22px;
+    left: 0;
+    /* transform: translateX(-50%); */
+    width: 50px;
+    height: 3px;
+    background-color: #ffffff;
+}
+.about-paragraph {
+    font-size: 18px;
+    line-height: 32px;
+    position: relative;
+    letter-spacing: 0.02em;
+    text-overflow: ellipsis;
+    max-width: 28.7em;
+    font-weight: 500;
+}
+
+.about-paragraph:after {
+    content: '\00A0\275e';
+}
+
+.about-paragraph:before {
+    content: '\275d';
+}
+.flex-text-container {
+    display: flex;
+    flex-direction: row;
+    flex-basis: auto;
+    font-family: 'Poppins', sans-serif;
+    max-width: 100%;
+    flex-wrap: nowrap;
+    /* align-content: stretch; */
+    justify-content: center;
+    align-items: baseline;
+    padding: 10%;
+    gap: 40px;
+}
+.left {
+    max-width: 50%;
+    padding-right: 40px;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.right{
+    max-width: 50%;
+    padding-right: 40px;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+ }
+ .about-heading-h1 {
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    line-height: normal;
+    position: relative;
+}
+.about-heading-h1::after {
+    content: "";
+    position: absolute;
+    bottom: -22px;
+    left: 0;
+    /* transform: translateX(-50%); */
+    width: 40px;
+    height: 2px;
+    background-color: #000000;
+}
+.about-paragraph-paragraph {
+    font-family: serif;
+    font-weight: 400;
+    font-size: small;
+    text-align: left;
+    line-height: 22px;
+}
+/* Media query to switch to column layout when width is below 600px */
+@media (max-width: 600px) {
+    .flex-text-container {
+        flex-direction: column;
+    }
+}
+
+</style>
+</head>
+
+<body>
+    <header id="header"></header>
+    <div class="about-container">
+        <div class="about-text">
+            <div class="text-container">
+                <div class="about-title">About</div>
+                <div class="about-heading">Laaleh</div>
+                <div class="about-paragraph">
+                    Laaleh a ladies boutique brand. Laaaleh has its varety which ranges from luxury pret wear, party wear, casual wear as well as bridal wear in fabrics such as Chiffon, Silk, lawn and Swiss voile fabric.
+                </div>
+            </div>
+        </div>
+        <div class="flex-text-container">
+            <div class="left">
+                <div class="about-heading-h1">ABOUT STORE</div>
+                <div class="about-paragraph-paragraph">
+                    Nakoosh a ladies boutique brand started in August 2010 by the Paramount Lace group. Nakoosh has its varety which ranges from luxury pret wear, party wear, casual wear as well as bridal wear in fabrics such as Chiffon, Silk, lawn and Swiss voile fabric.
+                </div>
+            </div>
+            <div class="right">
+                <div class="about-heading-h1">CUSTOMER SATISFACTION</div>
+                <div class="about-paragraph-paragraph">
+                    Nakoosh a ladies boutique brand started in August 2010 by the Paramount Lace group. Nakoosh has its varety which ranges from luxury pret wear, party wear, casual wear as well as bridal wear in fabrics such as Chiffon, Silk, lawn and Swiss voile fabric.
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer id="footer"></footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    // Function to fetch and inject HTML content
+    const injectHTML = (id, file) => {
+        fetch(file)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`Could not fetch ${file}`);
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById(id).innerHTML = data;
+            })
+            .catch(error => console.error('Error fetching the HTML:', error));
+    };
+
+    // Inject header and footer
+    injectHTML('header', './public/header.html');
+    injectHTML('footer', './public/footer.html');
+});
+
+    </script>
+</body>
+</html>
